@@ -32,6 +32,8 @@ jobs:
 
 
   docker-image:
+    needs: [build]
+    if: success()
     runs-on: ubuntu-latest
 
     steps:
