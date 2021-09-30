@@ -15,6 +15,10 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class UserDao extends GenericDao<User>{
+
+    public UserDao() {
+        super();
+    }
     
     public Boolean usernameExist(String username){
         Session s=HibernateUtil.getSessionFactory().openSession();

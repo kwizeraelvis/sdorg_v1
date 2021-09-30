@@ -8,6 +8,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class DepartmentDao extends GenericDao<Department>{
+
+    public DepartmentDao() {
+        super();
+    }
+    
     public List<Department> findByUniversity(University university){
         Session s = HibernateUtil.getSessionFactory().openSession();
         Query q = s.createQuery("SELECT a FROM Department a WHERE a.faculty.university = :x");

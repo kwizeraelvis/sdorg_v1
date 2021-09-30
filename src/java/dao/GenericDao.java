@@ -7,6 +7,13 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class GenericDao<X> {
+
+    public GenericDao() {
+        HibernateUtil.getSessionFactory();
+    }
+    
+    
+    
     public void register(X x){
         Session s = HibernateUtil.getSessionFactory().openSession();
         s.beginTransaction();

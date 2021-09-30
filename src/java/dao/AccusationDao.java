@@ -14,6 +14,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class AccusationDao extends GenericDao<Accusation>{
+
+    public AccusationDao() {
+        super();
+    }
+    
     public List<Accusation> findByStudent(Student st){
         Session s = HibernateUtil.getSessionFactory().openSession();
         Query q = s.createQuery("SELECT a FROM Accusation a WHERE a.movement.device.person = :x");
