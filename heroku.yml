@@ -1,0 +1,12 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+  config:
+    DB_URL: ${DB_URL}
+    DB_USERNAME: ${DB_USERNAME}
+    DB_PASSWORD: ${DB_PASSWORD}
+    DB_DDL_AUTO: ${DB_DDL_AUTO}
+build:
+  docker:
+    web: Dockerfile.heroku
