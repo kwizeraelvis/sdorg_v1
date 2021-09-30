@@ -21,6 +21,7 @@ import domain.University;
 import domain.User;
 import domain.Visitor;
 import java.util.Properties;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -44,6 +45,8 @@ private static final Logger LOG = Logger.getLogger(HibernateUtil.class.getName()
             try {
                 Configuration config = new Configuration();
                 Properties settings = new Properties();
+                
+                LOG.log(Level.INFO, "The System DB dialect is: {}", System.getenv("DB_DIALECT"));
                 
                 settings.put(Environment.DRIVER, System.getenv("DB_DRIVER"));
                 settings.put(Environment.URL, System.getenv("DB_URL"));
