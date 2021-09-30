@@ -1,6 +1,7 @@
 package model;
 
 import Filter.HttpSessionUtils;
+import dao.HibernateUtil;
 import dao.UserDao;
 import domain.EStatus;
 import domain.Person;
@@ -87,9 +88,7 @@ public class UserModel {
     
   
     public String login() {
-        
-        
-        
+        HibernateUtil.getSessionFactory().openSession();
         try {
             findUser();
             ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();

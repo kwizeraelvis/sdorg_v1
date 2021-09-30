@@ -46,7 +46,7 @@ private static final Logger LOG = Logger.getLogger(HibernateUtil.class.getName()
                 Configuration config = new Configuration();
                 Properties settings = new Properties();
                 
-                LOG.log(Level.INFO, "The System DB dialect is: {}", System.getenv("DB_DIALECT"));
+                LOG.log(Level.INFO, "The System DB username is: {}", System.getenv("DB_USERNAME"));
                 
                 settings.put(Environment.DRIVER, System.getenv("DB_DRIVER"));
                 settings.put(Environment.URL, System.getenv("DB_URL"));
